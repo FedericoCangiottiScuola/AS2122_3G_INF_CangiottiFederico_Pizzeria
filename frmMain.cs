@@ -23,8 +23,20 @@ namespace AS2122_3G_INF_CangiottiFederico_Pizzeria
 
         private void btnAggiungi_Click(object sender, EventArgs e)
         {
-            string scelta = cmbPizze.Text;
-            int quantita = Convert.ToInt32(txtNumPizze.Text);
+            string scelta = null;
+            int quantita = 0;
+
+            scelta = cmbPizze.Text;
+
+            try
+            {
+                quantita = Convert.ToInt32(txtNumPizze.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Inserire un valore valido per la quatità delle pizze.");
+                return;
+            }
 
             switch (scelta)
             {
@@ -39,6 +51,9 @@ namespace AS2122_3G_INF_CangiottiFederico_Pizzeria
                 case "VERDURE":
                     lstPizze.Items.Add($"{scelta}, {quantita}");
                     break;
+                default:
+                    MessageBox.Show("Scegliere una pizza.");
+                    return;
             }
         }
     }
