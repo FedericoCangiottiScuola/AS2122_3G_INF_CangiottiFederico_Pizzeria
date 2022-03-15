@@ -42,14 +42,23 @@ namespace AS2122_3G_INF_CangiottiFederico_Pizzeria
             {
                 case "MARGHERITA":
                     lstPizze.Items.Add($"{scelta}, {quantita}");
+
+                    nMargherita += quantita;
+                    lblMargherita.Text = Convert.ToString(nMargherita);
                     break;
 
                 case "4 STAGIONI":
                     lstPizze.Items.Add($"{scelta}, {quantita}");
+
+                    n4Stagioni += quantita;
+                    lbl4Stagioni.Text = Convert.ToString(n4Stagioni);
                     break;
 
                 case "VERDURE":
                     lstPizze.Items.Add($"{scelta}, {quantita}");
+
+                    nVerdure += quantita;
+                    lblVerdure.Text = Convert.ToString(nVerdure);
                     break;
                 default:
                     MessageBox.Show("Scegliere una pizza.");
